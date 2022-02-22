@@ -16,7 +16,7 @@ import (
 
 func TestSearchContext(t *testing.T) {
 	name := "nginx"
-	starCount := 5000
+	starCount := 15000
 
 	var ctx searchContext
 	cases := []struct {
