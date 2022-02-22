@@ -142,14 +142,14 @@ result2
 		// Custom Format with CreatedAt
 		{
 			formatter.Context{Format: NewSearchFormat("{{.Name}} {{.StarCount}}")},
-			`result1 5000
+			`result1 15000
 result2 5
 `,
 		},
 	}
 
 	results := []registrytypes.SearchResult{
-		{Name: "result1", Description: "Official build", StarCount: 5000, IsOfficial: true, IsAutomated: false},
+		{Name: "result1", Description: "Official build", StarCount: 15000, IsOfficial: true, IsAutomated: false},
 		{Name: "result2", Description: "Not official", StarCount: 5, IsOfficial: false, IsAutomated: true},
 	}
 
@@ -171,11 +171,11 @@ result2 5
 
 func TestSearchContextWriteJSON(t *testing.T) {
 	results := []registrytypes.SearchResult{
-		{Name: "result1", Description: "Official build", StarCount: 5000, IsOfficial: true, IsAutomated: false},
+		{Name: "result1", Description: "Official build", StarCount: 15000, IsOfficial: true, IsAutomated: false},
 		{Name: "result2", Description: "Not official", StarCount: 5, IsOfficial: false, IsAutomated: true},
 	}
 	expectedJSONs := []map[string]interface{}{
-		{"Name": "result1", "Description": "Official build", "StarCount": "5000", "IsOfficial": "true", "IsAutomated": "false"},
+		{"Name": "result1", "Description": "Official build", "StarCount": "15000", "IsOfficial": "true", "IsAutomated": "false"},
 		{"Name": "result2", "Description": "Not official", "StarCount": "5", "IsOfficial": "false", "IsAutomated": "true"},
 	}
 
@@ -196,7 +196,7 @@ func TestSearchContextWriteJSON(t *testing.T) {
 
 func TestSearchContextWriteJSONField(t *testing.T) {
 	results := []registrytypes.SearchResult{
-		{Name: "result1", Description: "Official build", StarCount: 5000, IsOfficial: true, IsAutomated: false},
+		{Name: "result1", Description: "Official build", StarCount: 15000, IsOfficial: true, IsAutomated: false},
 		{Name: "result2", Description: "Not official", StarCount: 5, IsOfficial: false, IsAutomated: true},
 	}
 	out := bytes.NewBufferString("")
