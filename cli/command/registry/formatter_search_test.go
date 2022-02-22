@@ -16,7 +16,7 @@ import (
 
 func TestSearchContext(t *testing.T) {
 	name := "nginx"
-	starCount := 5000
+	starCount := 15000
 
 	var ctx searchContext
 	cases := []struct {
@@ -29,7 +29,7 @@ func TestSearchContext(t *testing.T) {
 		}, name, ctx.Name},
 		{searchContext{
 			s: registrytypes.SearchResult{StarCount: starCount},
-		}, "5000", ctx.StarCount},
+		}, "15000", ctx.StarCount},
 		{searchContext{
 			s: registrytypes.SearchResult{IsOfficial: true},
 		}, "[OK]", ctx.IsOfficial},
